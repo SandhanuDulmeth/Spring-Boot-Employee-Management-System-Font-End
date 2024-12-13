@@ -22,34 +22,15 @@
                             <table class="table table-striped table-bordered">
                                 <thead class="table-dark">
                                     <tr>
-                                        <th>#</th>
+                                        <th></th>
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Address</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>John Doe</td>
-                                        <td>john.doe@example.com</td>
-                                        <td>123 Main St, Cityville</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary" onclick="editEmployee(1, 'John Doe', 'john.doe@example.com', '123 Main St, Cityville')">Edit</button>
-                                            <button class="btn btn-sm btn-danger">Delete</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Jane Smith</td>
-                                        <td>jane.smith@example.com</td>
-                                        <td>456 Elm St, Townsville</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary" onclick="editEmployee(2, 'Jane Smith', 'jane.smith@example.com', '456 Elm St, Townsville')">Edit</button>
-                                            <button class="btn btn-sm btn-danger">Delete</button>
-                                        </td>
-                                    </tr>
+                                <tbody id="tbody">
+                                   
                                 </tbody>
                             </table>
                         </div>
@@ -81,7 +62,7 @@
                                 <label for="employeeAddress" class="form-label">Address</label>
                                 <input type="text" id="employeeAddress" class="form-control" required>
                             </div>
-                            <button type="submit" class="btn btn-success">Save Changes</button>
+                            <button type="button" class="btn btn-success" onclick="editDataBaseFunction()">Save Changes</button>
                         </form>
                     </div>
                 </div>
@@ -89,27 +70,8 @@
         </div>
     </div>
 
-    <script>
-        function editEmployee(id, name, email, address) {
-            // Populate the form fields with the selected employee's data
-            document.getElementById('employeeId').value = id;
-            document.getElementById('employeeName').value = name;
-            document.getElementById('employeeEmail').value = email;
-            document.getElementById('employeeAddress').value = address;
-        }
-
-        document.getElementById('editForm').addEventListener('submit', function (e) {
-            e.preventDefault(); // Prevent default form submission
-
-            const id = document.getElementById('employeeId').value;
-            const name = document.getElementById('employeeName').value;
-            const email = document.getElementById('employeeEmail').value;
-            const address = document.getElementById('employeeAddress').value;
-
-            alert(`Employee ${id} updated with Name: ${name}, Email: ${email}, and Address: ${address}`);
-            // Here you can add functionality to update the employee list dynamically or send data to a server
-        });
-    </script>
+   
+    <script src="Scripts/EmployeeDataBase.js"></script>
 </body>
 
 </html>
