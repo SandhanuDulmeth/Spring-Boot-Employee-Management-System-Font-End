@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function updateTable() {
     let tbody = document.getElementById("tbody");
     let body = "";
-    fetch("http://localhost:8080/")
+    fetch("http://localhost:8080/employee")
         .then(res => res.json())
         .then(data => {
             data.forEach(element => {
@@ -38,7 +38,7 @@ function deleteEmployee(id) {
     };
     
    
-    fetch(`http://localhost:8080/${id}`, requestOptions)
+    fetch(`http://localhost:8080/employee/${id}`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
         console.log(result)
@@ -78,7 +78,7 @@ function editDataBaseFunction() {
         redirect: "follow"
     };
 
-    fetch("http://localhost:8080/", requestOptions)
+    fetch("http://localhost:8080/employee", requestOptions)
         .then((response) => response.text())
         .then((result) => {
             console.log(result)
